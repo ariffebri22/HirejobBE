@@ -1,5 +1,5 @@
 const {login,register,verify, putData} = require("../controller/AuthRecruiterController")
-const {loginWorker,registerWorker,verifyWorker,changeDataWorker} = require("../controller/AuthWorkersController")
+const {loginWorker,registerWorker,verifyWorker,changeDataWorker, getWorkersById, putWorkers} = require("../controller/AuthProfileWorkersController")
 
 const express = require('express');
 const { Router } = require("express");
@@ -16,6 +16,9 @@ router.post('/workers/login',loginWorker)
 router.post('/workers/register',registerWorker)
 router.put('/workers/changepassword', Protect, changeDataWorker)
 router.get('/verifyworker/:id',verifyWorker)
+
+router.put("/workers/update/:id", Protect, upload.single("photo_worker"), putWorkers)
+router.get("/workers/:id", Protect, getWorkersById)
 
 
 

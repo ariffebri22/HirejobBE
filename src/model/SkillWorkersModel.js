@@ -23,7 +23,7 @@ const putSkillWorkers = async (id, data) => {
   console.log("model putSkillWorkers");
   return new Promise((resolve, reject) =>
     Pool.query(
-      `UPDATE workers_skills SET skills_name='${skills_name}' WHERE workers_skills.id_worker=${id}`,
+      `UPDATE workers_skills SET skills_name='${skills_name}' WHERE workers_skills.id=${id}`,
       (err, result) => {
         if (err) {
           reject(err);
@@ -37,7 +37,7 @@ const putSkillWorkers = async (id, data) => {
 const getSkillWorkersById = (id) => {
   return new Promise((resolve, reject) => {
     Pool.query(
-      `SELECT workers_skills.* FROM workers_skills JOIN workers ON workers_skills.id_worker = workers.id WHERE workers.id=${id}`,
+      `SELECT workers_skills.skills_name, workers_skills.id_worker FROM workers_skills JOIN workers_authprofile ON workers_skills.id_worker = workers_authprofile.id WHERE workers_skills.id=${id}`,
       (err, result) => {
         if (err) {
           reject(err);

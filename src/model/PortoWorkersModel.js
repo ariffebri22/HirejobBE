@@ -23,7 +23,7 @@ const putPortoWorkers = async (id, data) => {
   console.log("model putPortoWorkers");
   return new Promise((resolve, reject) =>
     Pool.query(
-      `UPDATE workers_portofolio SET porto_name='${porto_name}', porto_link='${porto_link}', porto_type='${porto_type}', porto_photo='${porto_photo}' WHERE workers_portofolio.id_worker=${id}`,
+      `UPDATE workers_portofolio SET porto_name='${porto_name}', porto_link='${porto_link}', porto_type='${porto_type}', porto_photo='${porto_photo}' WHERE workers_portofolio.id=${id}`,
       (err, result) => {
         if (err) {
           reject(err);
@@ -34,10 +34,24 @@ const putPortoWorkers = async (id, data) => {
     )
   );
 };
+
+const deletePortoWorkersById = (id) => {
+  console.log("deletePortoWorkersById")
+  return new Promise((resolve, reject) => {
+    Pool.query(`DELETE FROM workers_portofolio WHERE workers_portofolio.id = ${id}`, (err, result) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(result);
+      }
+    });
+  });
+};
+
 const getPortoWorkersById = (id) => {
   return new Promise((resolve, reject) => {
     Pool.query(
-      `SELECT workers_portofolio.* FROM workers_portofolio JOIN workers ON workers_portofolio.id_worker = workers.id WHERE workers.id=${id}`,
+      `SELECT workers_portofolio.id_worker, workers_portofolio.porto_name, workers_portofolio.porto_link, workers_portofolio.porto_type, workers_portofolio.porto_photo FROM workers_portofolio JOIN workers_authprofile ON workers_portofolio.id_worker = workers_authprofile.id WHERE workers_portofolio.id=${id}`,
       (err, result) => {
         if (err) {
           reject(err);
@@ -51,5 +65,6 @@ const getPortoWorkersById = (id) => {
 module.exports = {
   postPortoWorkers,
   putPortoWorkers,
+  deletePortoWorkersById,
   getPortoWorkersById,
 };
