@@ -10,10 +10,11 @@ const { Protect } = require("../midleware/Protect");
 router.post('/recruiter/login',login)
 router.post('/recruiter/register',register)
 router.put('/recruiter/changepassword', Protect, putData)
+router.get('/verify/:id',verify)
+
 router.post('/workers/login',loginWorker)
 router.post('/workers/register',registerWorker)
 router.put('/workers/changepassword', Protect, changeDataWorker)
-router.get('/verify/:id',verify)
 router.get('/verifyworker/:id',verifyWorker)
 
 
