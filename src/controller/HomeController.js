@@ -5,7 +5,7 @@ const homeController = {
     const { page, order, sort, search, searchBy, limit } = req.query;
     data = {
       page: page || 1,
-      order: order || "workers.username",
+      order: order || "workers_authprofile.username",
       sort: sort || "ASC",
       search: search || "",
       searchBy: searchBy || "username",

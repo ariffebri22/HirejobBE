@@ -4,18 +4,13 @@ const {
   putSkillWorkers,
 } = require("../model/SkillWorkersModel");
 
-const cloudinary = require("../config/photo");
-
 const skillWorkersController = {
   postWorkers: async (req, res, next) => {
     const { skills_name } = req.body;
 
     console.log("post file");
-
     console.log(req.body);
-
     console.log("post data");
-
     console.log(skills_name);
 
     let id_worker = req.payload.id;
@@ -31,7 +26,7 @@ const skillWorkersController = {
 
     let data = {
       id_worker,
-      skills_name
+      skills_name,
     };
 
     console.log("data");
@@ -78,7 +73,7 @@ const skillWorkersController = {
     console.log("put data");
     console.log(dataWorkersId.rows[0]);
     let data = {
-      skills_name: skills_name || dataWorkersId.rows[0].skills_name
+      skills_name: skills_name || dataWorkersId.rows[0].skills_name,
     };
 
     console.log(data);
