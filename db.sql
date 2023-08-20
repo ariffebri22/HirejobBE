@@ -1,4 +1,15 @@
 -- Active: 1690000069845@@147.139.210.135@5432@kb02
+
+CREATE TABLE message_app(
+    id SERIAL PRIMARY KEY,
+    id_rekruter INT,
+    FOREIGN KEY (id_rekruter) REFERENCES recruiters(id),
+    id_pekerja INT NOT NULL,
+    position_job VARCHAR NOT NULL,
+    message_hiring VARCHAR NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW(),
+    update_at TIMESTAMP DEFAULT NOW()
+);
 CREATE TABLE profil_company(
     id SERIAL PRIMARY KEY,
     id_company INT,
