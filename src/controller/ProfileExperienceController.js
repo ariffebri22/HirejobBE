@@ -121,7 +121,7 @@ const ExperienceController = {
             console.log("id data");
             console.log(users_id);
             console.log(dataExpId.rows[0].id);
-            if (users_id !== dataExpId.rows[0].id) {
+            if (users_id !== dataExpId.rows[0].id_workers) {
                 return res.status(403).json({ status: 403, message: "You are not authorized to access this." });
             }
 
@@ -139,16 +139,12 @@ const ExperienceController = {
     },
     postData: async (req, res, next) => {
         try {
-            const { posisi, nama_perusahaan, working_start, working_end, deskripsi } = req.body;
+            const { posisi, nama_perusahaan, working_start_at, working_end_at, deskripsi } = req.body;
 
             console.log("post data");
-            console.log(posisi, nama_perusahaan, working_start, working_end, deskripsi);
+            console.log(posisi, nama_perusahaan, working_start_at, working_end_at, deskripsi);
 
-            if (!req.isFileValid) {
-                return res.status(404).json({ message: req.isFileValidMessage });
-            }
-
-            if (!posisi || !nama_perusahaan || !working_start || !working_end || !deskripsi) {
+            if (!posisi || !nama_perusahaan || !working_start_at || !working_end_at || !deskripsi) {
                 return res.status(400).json({ status: 400, message: "Please input fill are required" });
             }
 
@@ -156,8 +152,8 @@ const ExperienceController = {
                 id_workers: req.payload.id,
                 posisi: xss(posisi),
                 nama_perusahaan: xss(nama_perusahaan),
-                working_start: xss(working_start),
-                working_end: xss(working_end),
+                working_start_at: xss(working_start_at),
+                working_end_at: xss(working_end_at),
                 deskripsi: xss(deskripsi),
             };
 
@@ -176,14 +172,10 @@ const ExperienceController = {
     putData: async (req, res, next) => {
         try {
             const { id } = req.params;
-            const { posisi, nama_perusahaan, working_start, working_end, deskripsi } = req.body;
+            const { posisi, nama_perusahaan, working_start_at, working_end_at, deskripsi } = req.body;
 
             if (!id || id <= 0 || isNaN(id)) {
                 return res.status(400).json({ status: 400, message: "Invalid id" });
-            }
-
-            if (!req.isFileValid) {
-                return res.status(404).json({ message: req.isFileValidMessage });
             }
 
             const dataExpId = await getExpById(parseInt(id));
@@ -193,7 +185,7 @@ const ExperienceController = {
             console.log("id data");
             console.log(users_id);
             console.log(dataExpId.rows[0].id);
-            if (users_id !== dataExpId.rows[0].id) {
+            if (users_id !== dataExpId.rows[0].id_workers) {
                 return res.status(403).json({ status: 403, message: "You are not authorized to access this." });
             }
 
@@ -201,10 +193,11 @@ const ExperienceController = {
             console.log(dataExpId.rows[0]);
 
             const data = {
+                id: dataExpId.rows[0].id,
                 posisi: xss(posisi) || dataExpId.rows[0].posisi,
                 nama_perusahaan: xss(nama_perusahaan) || dataExpId.rows[0].nama_perusahaan,
-                working_start: xss(working_start) || dataExpId.rows[0].working_start,
-                working_end: xss(working_end) || dataExpId.rows[0].working_end,
+                working_start_at: xss(working_start_at) || dataExpId.rows[0].working_start_at,
+                working_end_at: xss(working_end_at) || dataExpId.rows[0].working_end_at,
                 deskripsi: xss(deskripsi) || dataExpId.rows[0].deskripsi,
             };
 

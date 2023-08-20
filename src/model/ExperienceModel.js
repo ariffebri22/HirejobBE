@@ -5,9 +5,9 @@ const getExpAll = async () => {
     return new Promise((resolve, reject) =>
         Pool.query(
             `SELECT ex.id, wo.username AS workers, ex.posisi, ex.nama_perusahaan, ex.working_start_at, ex.working_end_at, ex.deskripsi, ex.created_at
-            FROM workers_experience ex
-            JOIN workers wo ON ex.id_workers = wo.id
-            ORDER BY ex.id DESC;`,
+        FROM workers_experience ex
+        JOIN workers_authprofile wo ON ex.id_workers = wo.id
+        ORDER BY ex.id DESC`,
             (err, result) => {
                 if (!err) {
                     resolve(result);
@@ -26,7 +26,7 @@ const getExp = async (data) => {
         Pool.query(
             `SELECT ex.id, wo.username AS workers, ex.posisi, ex.nama_perusahaan, ex.working_start_at, ex.working_end_at, ex.deskripsi, ex.created_at
             FROM workers_experience ex
-            JOIN workers wo ON ex.id_workers = wo.id
+            JOIN workers_authprofile wo ON ex.id_workers = wo.id
             WHERE ${searchBy} ILIKE '%${search}%' ORDER BY id ${sort} OFFSET ${offset} LIMIT ${limit} `,
             (err, result) => {
                 if (!err) {
