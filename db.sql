@@ -10,6 +10,11 @@ CREATE TABLE message_app(
     created_at TIMESTAMP DEFAULT NOW(),
     update_at TIMESTAMP DEFAULT NOW()
 );
+
+ALTER TABLE message_app DROP COLUMN id_pekerja;
+
+ALTER TABLE message_app ADD COLUMN id_pekerja INT DEFAULT NULL;
+
 CREATE TABLE profil_company(
     id SERIAL PRIMARY KEY,
     id_company INT,
@@ -26,7 +31,7 @@ CREATE TABLE profil_company(
 );
 
 ALTER TABLE profil_company RENAME COLUMN deskirpsi TO deskripsi;
--- Active: 1692248997743@@147.139.210.135@5432@kb02
+
 
 CREATE TABLE
     workers_experience (
