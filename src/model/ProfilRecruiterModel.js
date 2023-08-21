@@ -28,4 +28,6 @@ const postCompany = async (data) => {
     )
 }
 
+
+
 module.exports ={postCompany,getRecruiterAll}

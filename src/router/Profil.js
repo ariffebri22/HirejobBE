@@ -9,7 +9,7 @@ const { Protect } = require("../midleware/Protect");
 
 
 router.post('/company',Protect,upload.single('photo'),postDataCompany)
-router.get('/company/detail',getDataCompany)
+router.get('/detail',getDataCompany)
 
 
 
