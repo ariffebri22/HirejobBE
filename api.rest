@@ -3,7 +3,7 @@
 ### 
 GET {{url}}:{{port}}
 ### 
- GET {{url}}:{{port}}/company/detail
+ GET {{url}}:{{port}}/chat/detail/:1
 ### 
  DELETE {{url}}:{{port}}/category/6
 ### 
