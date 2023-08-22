@@ -1,4 +1,4 @@
-const { getHomeSearchSortPagination, getDetailHiring, getHomeCount} = require("../model/HomeModel");
+const { getHomeSearchSortPagination, getDetailHiring, getHire, getHomeCount} = require("../model/HomeModel");
 
 const homeController = {
   getDataSearch: async (req, res, next) => {
@@ -46,6 +46,27 @@ const homeController = {
 
     console.log(id);
     let dataSearch = await getDetailHiring(id);
+    if (!dataSearch.rows[0]) {
+      return res.status(200).json({
+        status: 200,
+        message: "get data profile data not found",
+        data: [],
+      });
+    }
+    if (dataSearch) {
+      res.status(200).json({
+        status: 200,
+        message: "get data profile success",
+        data: dataSearch.rows,
+      });
+    }
+  },
+
+  getDataHire: async (req, res, next) => {
+    const {id } = req.params
+
+    console.log(id);
+    let dataSearch = await getHire(id);
     if (!dataSearch.rows[0]) {
       return res.status(200).json({
         status: 200,

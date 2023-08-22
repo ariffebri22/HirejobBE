@@ -67,12 +67,12 @@ const changeData = async (email, data) => {
 };
 
 const putAuthProfileRecruiter = async (id, data) => {
-    const { username, bidang,provinsi,kota,deskripsi,email_perusahaan,phone_company,linkedin,photo} = data;
+    const { perusahaan, bidang,provinsi,kota,deskripsi,email_perusahaan,phone_company,linkedin,photo} = data;
     console.log(data);
     console.log("model putAuthProfileRecruiter");
     return new Promise((resolve, reject) =>
       Pool.query(
-        `UPDATE company_authprofil SET username='${username}', bidang='${bidang}', provinsi='${provinsi}', kota='${kota}', deskripsi='${deskripsi}', email_perusahaan='${email_perusahaan}', phone_company='${phone_company}', linkedin='${linkedin}', photo='${photo}' WHERE company_authprofil.id=${id}`,
+        `UPDATE company_authprofil SET perusahaan='${perusahaan}', bidang='${bidang}', provinsi='${provinsi}', kota='${kota}', deskripsi='${deskripsi}', email_perusahaan='${email_perusahaan}', phone_company='${phone_company}', linkedin='${linkedin}', photo='${photo}' WHERE company_authprofil.id=${id}`,
         (err, result) => {
           if (err) {
             reject(err);
