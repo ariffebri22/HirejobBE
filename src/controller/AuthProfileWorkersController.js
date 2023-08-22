@@ -176,7 +176,7 @@ const AuthProfileController = {
 
     console.log("id data");
     console.log(id);
-    console.log(dataWorkersId.rows[0].id);
+    console.log(dataWorkersId);
     console.log(dataWorkersId.rows[0]);
     if (id_payload != dataWorkersId.rows[0].id) {
       return res.status(404).json({ message: "not your recipe" });
