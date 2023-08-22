@@ -13,6 +13,8 @@ CREATE TABLE
     );
 DROP TABLE pesan;
 
+ALTER TABLE pesan ADD COLUMN hire_position VARCHAR;
+
 CREATE TABLE
     profil_company(
         id SERIAL PRIMARY KEY,
