@@ -1,9 +1,10 @@
 const { postMessage } = require("../model/MessageModel");
+const { getHire } = require('../model/HomeModel')
 
 const MessageController = {
   postDataMessage: async (req, res, next) => {
-    const {id_worker} = req.params
-    const { company_message, workers_message } = req.body;
+    const {id} = req.params
+    const { company_message, workers_message, hire_position } = req.body;
 
     console.log("post file");
     console.log(req.body);
@@ -11,6 +12,10 @@ const MessageController = {
     console.log(company_message, workers_message);
 
     let id_company = req.payload.id;
+    let dataWorkersId = await getHire(parseInt(id));
+    console.log(dataWorkersId)
+    let id_worker = dataWorkersId.rows[0].authprofile_id
+
     console.log("payload");
     console.log(req.payload);
     console.log(id_company, company_message, workers_message);
@@ -26,6 +31,7 @@ const MessageController = {
       id_worker,
       company_message,
       workers_message,
+      hire_position,
     };
 
     console.log("data");
