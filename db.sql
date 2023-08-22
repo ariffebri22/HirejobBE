@@ -1,63 +1,21 @@
 -- Active: 1690000069845@@147.139.210.135@5432@kb02
+CREATE TABLE profil_company(
+    id SERIAL PRIMARY KEY,
+    id_company INT,
+    FOREIGN KEY (id_company) REFERENCES recruiters(id),
+    bidang VARCHAR NOT NULL,
+    provinsi VARCHAR NOT NULL,
+    kota VARCHAR NOT NULL,
+    deskripsi VARCHAR NOT NULL,
+    email_perusahaan VARCHAR NOT NULL,
+    phone_company VARCHAR NOT NULL,
+    linkedin VARCHAR NOT NULL,
+    photo VARCHAR,
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
-CREATE TABLE
-    message_app(
-        id SERIAL PRIMARY KEY,
-        id_rekruter INT,
-        FOREIGN KEY (id_rekruter) REFERENCES company_authprofil(id),
-        id_pekerja INT,
-        FOREIGN KEY (id_pekerja) REFERENCES company_authprofil(id),
-        position_job VARCHAR,
-        message_recruiter VARCHAR,
-        message_workers VARCHAR,
-        created_at TIMESTAMP DEFAULT NOW(),
-        update_at TIMESTAMP DEFAULT NOW()
-    );
-DROP TABLE message_app;
-ALTER TABLE message_app DROP COLUMN id_pekerja;
-
-ALTER TABLE message_app ADD COLUMN id_pekerja INT DEFAULT NULL;
-
-CREATE TABLE
-    profil_company(
-        id SERIAL PRIMARY KEY,
-        id_company INT,
-        FOREIGN KEY (id_company) REFERENCES recruiters(id),
-        bidang VARCHAR NOT NULL,
-        provinsi VARCHAR NOT NULL,
-        kota VARCHAR NOT NULL,
-        deskripsi VARCHAR NOT NULL,
-        email_perusahaan VARCHAR NOT NULL,
-        phone_company VARCHAR NOT NULL,
-        linkedin VARCHAR NOT NULL,
-        photo VARCHAR,
-        created_at TIMESTAMP DEFAULT NOW()
-    );
-
-CREATE TABLE
-    company_authprofil(
-        id SERIAL PRIMARY KEY,
-        username VARCHAR NOT NULL,
-        email VARCHAR NOT NULL,
-        password VARCHAR NOT NULL,
-        phone VARCHAR,
-        perusahaan VARCHAR,
-        jabatan VARCHAR,
-        is_active BOOLEAN DEFAULT false,
-        checker VARCHAR,
-        bidang VARCHAR,
-        provinsi VARCHAR,
-        kota VARCHAR,
-        deskripsi VARCHAR,
-        email_perusahaan VARCHAR,
-        phone_company VARCHAR,
-        linkedin VARCHAR,
-        photo VARCHAR,
-        created_at TIMESTAMP DEFAULT NOW()
-    );
-DROP TABLE company_authprofil;
 ALTER TABLE profil_company RENAME COLUMN deskirpsi TO deskripsi;
-
+-- Active: 1692248997743@@147.139.210.135@5432@kb02
 
 CREATE TABLE
     workers_experience (
@@ -222,87 +180,29 @@ FROM workers_authprofile a
     JOIN workers_portofolio c ON a.id = c.id_worker
     JOIN workers_skills d ON a.id = d.id_worker;
 
-SELECT
-    workers_authprofile.id AS authprofile_id,
-    workers_experience.id AS experience_id,
-    workers_portofolio.id AS portofolio_id,
-    workers_skills.id AS skills_id,
-    workers_experience.id_workers AS experience_id_workers,
-    workers_portofolio.id_worker AS portofolio_id_worker,
-    workers_skills.id_worker AS skills_id_worker,
-    workers_authprofile.username,
-    workers_authprofile.email,
-    workers_authprofile.phone,
-    workers_authprofile.is_active,
-    workers_authprofile.checker,
-    workers_authprofile.position,
-    workers_authprofile.domicile,
-    workers_authprofile.company_work,
-    workers_authprofile.job_desc,
-    workers_authprofile.photo_worker,
-    workers_experience.posisi,
-    workers_experience.nama_perusahaan,
-    workers_experience.working_start_at,
-    workers_experience.working_end_at,
-    workers_experience.deskripsi,
-    workers_experience.created_at,
-    workers_portofolio.porto_name,
-    workers_portofolio.porto_link,
-    workers_portofolio.porto_type,
-    workers_portofolio.porto_photo,
-    workers_portofolio.created_at,
-    workers_skills.skills_name
-FROM workers_authprofile
-    JOIN workers_skills ON workers_authprofile.id = workers_skills.id_worker
-    JOIN workers_experience ON workers_authprofile.id = workers_experience.id_workers
-    JOIN workers_portofolio ON workers_authprofile.id = workers_portofolio.id_worker;
+SELECT workers_authprofile.id AS authprofile_id, workers_experience.id AS experience_id, workers_portofolio.id AS portofolio_id, workers_skills.id AS skills_id, workers_experience.id_workers AS experience_id_workers, workers_portofolio.id_worker AS portofolio_id_worker, workers_skills.id_worker AS skills_id_worker, workers_authprofile.username, workers_authprofile.email, workers_authprofile.phone, workers_authprofile.is_active, workers_authprofile.checker, workers_authprofile.position, workers_authprofile.domicile, workers_authprofile.company_work, workers_authprofile.job_desc, workers_authprofile.photo_worker, workers_experience.posisi, workers_experience.nama_perusahaan, workers_experience.working_start_at, workers_experience.working_end_at, workers_experience.deskripsi, workers_experience.created_at, workers_portofolio.porto_name, workers_portofolio.porto_link, workers_portofolio.porto_type, workers_portofolio.porto_photo, workers_portofolio.created_at, workers_skills.skills_name FROM workers_authprofile JOIN workers_skills ON workers_authprofile.id = workers_skills.id_worker JOIN workers_experience ON workers_authprofile.id = workers_experience.id_workers JOIN workers_portofolio ON workers_authprofile.id = workers_portofolio.id_worker;
 
-`
-SELECT
-    workers_authprofile.id AS authprofile_id,
-    workers_experience.id AS experience_id,
-    workers_portofolio.id AS portofolio_id,
-    workers_skills.id AS skills_id,
+`SELECT
+        workers_authprofile.id AS authprofile_id,
+        workers_experience.id AS experience_id,
+        workers_portofolio.id AS portofolio_id,
+        workers_skills.id AS skills_id,
 
-workers_experience.id_workers AS experience_id_workers,
-workers_portofolio.id_worker AS portofolio_id_worker,
-workers_skills.id_worker AS skills_id_worker,
+        workers_experience.id_workers AS experience_id_workers,
+        workers_portofolio.id_worker AS portofolio_id_worker,
+        workers_skills.id_worker AS skills_id_worker,
 
-workers_authprofile.username,
-workers_authprofile.email,
-workers_authprofile.phone,
-workers_authprofile.is_active,
-workers_authprofile.checker,
-workers_authprofile.position,
-workers_authprofile.domicile,
-workers_authprofile.company_work,
-workers_authprofile.job_desc,
-workers_authprofile.photo_worker,
+        workers_authprofile.username, workers_authprofile.email, workers_authprofile.phone, workers_authprofile.is_active, workers_authprofile.checker, workers_authprofile.position, workers_authprofile.domicile, workers_authprofile.company_work, workers_authprofile.job_desc, workers_authprofile.photo_worker,
 
-workers_experience.posisi,
-workers_experience.nama_perusahaan,
-workers_experience.working_start_at,
-workers_experience.working_end_at,
-workers_experience.deskripsi,
-workers_experience.created_at,
+        workers_experience.posisi, workers_experience.nama_perusahaan, workers_experience.working_start_at, workers_experience.working_end_at, workers_experience.deskripsi, workers_experience.created_at,
 
-workers_portofolio.porto_name,
-workers_portofolio.porto_link,
-workers_portofolio.porto_type,
-workers_portofolio.porto_photo,
-workers_portofolio.created_at,
+        workers_portofolio.porto_name, workers_portofolio.porto_link, workers_portofolio.porto_type, workers_portofolio.porto_photo, workers_portofolio.created_at,
 
-workers_skills.skills_name
-FROM
-    workers_authprofile
-    JOIN workers_skills ON workers_authprofile.id = workers_skills.id_worker
-    JOIN workers_experience ON workers_authprofile.id = workers_experience.id_workers
-    JOIN workers_portofolio ON workers_authprofile.id = workers_portofolio.id_worker
+        workers_skills.skills_name
+        
+        FROM workers_authprofile
+        JOIN workers_skills ON workers_authprofile.id = workers_skills.id_worker
+        JOIN workers_experience ON workers_authprofile.id = workers_experience.id_workers
+        JOIN workers_portofolio ON workers_authprofile.id = workers_portofolio.id_worker
 
-WHERE
-    ${searchBy}ILIKE '%${search}%'
-ORDER BY ${order}${sort}
-OFFSET ${
-offset}
-LIMIT ${
-limit}`,
+        WHERE ${searchBy} ILIKE '%${search}%' ORDER BY ${order} ${sort} OFFSET ${offset} LIMIT ${limit}`,
