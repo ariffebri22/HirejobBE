@@ -1,0 +1,449 @@
+username:John Doe
+email:john.doe@example.com
+phone:123-456-7890
+password:pass1234
+position:Analyst
+domicile:New York, USA
+company work:XYZ Corp
+job desc:Data analysis and reporting
+
+username:Emily Smith
+email:emily.smith@example.com
+phone:987-654-3210
+password:securepw1
+position:Developer
+domicile:Tokyo, Japan
+company work:Tech Solutions
+job desc:Web development and maintenance
+
+username:Alex Martin
+email:alex.martin@example.com
+phone:555-123-4567
+password:mypassword
+position:Designer
+domicile:Paris, France
+company work:Creative Innovators
+job desc:Graphic design and branding
+
+username:Sarah Jones
+email:sarah.jones@example.com
+phone:111-222-3333
+password:secret123
+position:Manager
+domicile:London, UK
+company work:MegaCorp Ltd
+job desc:Team management and project coordination
+
+username:Michael Adams
+email:michael.adams@example.com
+phone:444-555-6666
+password:strongpass
+position:Sales Executive
+domicile:Sydney, Australia
+company work:SalesPro Inc
+job desc:Client relationship and sales strategy
+
+username:Linda Wilson
+email:linda.wilson@example.com
+phone:777-888-9999
+password:p@ssw0rd
+position:Intern
+domicile:Mumbai, India
+company work:Learning Co
+job desc:Assisting various departments
+
+username:Andrew Clark
+email:andrew.clark@example.com
+phone:222-333-4444
+password:pass123word
+position:Researcher
+domicile:Beijing, China
+company work:Insight Research Institute
+job desc:Conducting market research
+
+username:Olivia Rogers
+email:olivia.rogers@example.com
+phone:666-777-8888
+password:mysecretpass
+position:Writer
+domicile:Rome, Italy
+company work:WordCrafters Ltd
+job desc:Content creation and editing
+
+username:Daniel Harris
+email:daniel.harris@example.com
+phone:333-444-5555
+password:topsecret1
+position:Consultant
+domicile:São Paulo, Brazil
+company work:Consultancy Experts
+job desc:Providing expert advice
+
+username:Sophia Thompson
+email:sophia.thompson@example.com
+phone:888-999-0000
+password:confidential
+position:Analyst
+domicile:Toronto, Canada
+company work:Data Insights Inc
+job desc:Data interpretation and reporting
+
+username:Matthew Walker
+email:matthew.walker@example.com
+phone:123-234-3456
+password:access123
+position:Developer
+domicile:Berlin, Germany
+company work:CodeMasters Co
+job desc:Software development
+
+username:Emma Hall
+email:emma.hall@example.com
+phone:555-666-7777
+password:mydevpassword
+position:Designer
+domicile:Amsterdam, Netherlands
+company work:Artistic Designs
+job desc:Visual design and illustration
+
+username:Benjamin Baker
+email:benjamin.baker@example.com
+phone:111-222-3333
+password:create123
+position:Manager
+domicile:Johannesburg, South Africa
+company work:OrganizeIt Ltd
+job desc:Team management and operations
+
+username:Mia Rodriguez
+email:mia.rodriguez@example.com
+phone:444-555-6666
+password:secure1pass
+position:Sales Executive
+domicile:Rio de Janeiro, Brazil
+company work:SalesGenius Corp
+job desc:Sales and client engagement
+
+username:Jacob Adams
+email:jacob.adams@example.com
+phone:777-888-9999
+password:mypassw0rd
+position:Intern
+domicile:Singapore
+company work:EduLearn Academy
+job desc:Learning and support
+
+username:Mia Jackson
+email:mia.jackson@example.com
+phone:222-333-4444
+password:demo123
+position:Researcher
+domicile:Moscow, Russia
+company work:Research Insights
+job desc:Conducting research projects
+
+username:William Wright
+email:william.wright@example.com
+phone:666-777-8888
+password:researchpass
+position:Writer
+domicile:Mexico City, Mexico
+company work:ScribbleCraft Co
+job desc:Writing articles and content
+
+username:Sophia Miller
+email:sophia.miller@example.com
+phone:333-444-5555
+password:explore321
+position:Consultant
+domicile:Istanbul, Turkey
+company work:Strategy Consultants
+job desc:Strategic consulting services
+
+username:Noah Turner
+email:noah.turner@example.com
+phone:888-999-0000
+password:strategic1
+position:Analyst
+domicile:Mumbai, India
+company work:Insightful Analytics
+job desc:Data analysis and insights
+
+username:Ava Hall
+email:ava.hall@example.com
+phone:123-234-3456
+password:analyze123
+position:Developer
+domicile:San Francisco, USA
+company work:AppInnovators Inc
+job desc:Mobile app development
+
+username:Ava Jenkins
+email:ava.jenkins@example.com
+phone:555-555-5555
+password:ava12345
+position:Analyst
+domicile:Chicago, USA
+company work:Data Insights Co
+job desc:Data analysis and insights
+
+username:Noah Morris
+email:noah.morris@example.com
+phone:666-666-6666
+password:noahpass
+position:Developer
+domicile:Vancouver, Canada
+company work:CodeCrafters Ltd
+job desc:Software development
+
+username:Olivia Turner
+email:olivia.turner@example.com
+phone:777-777-7777
+password:olivia321
+position:Designer
+domicile:Milan, Italy
+company work:Design Innovate Inc
+job desc:Visual design and creativity
+
+username:Liam Walker
+email:liam.walker@example.com
+phone:888-888-8888
+password:liamdevpass
+position:Manager
+domicile:Sydney, Australia
+company work:Global Enterprises
+job desc:Team leadership and strategy
+
+username:Emma Hughes
+email:emma.hughes@example.com
+phone:999-999-9999
+password:emma9876
+position:Sales Executive
+domicile:Madrid, Spain
+company work:SalesGenius Corp
+job desc:Sales and client relations
+
+username:William Parker
+email:william.parker@example.com
+phone:111-111-1111
+password:will123pass
+position:Researcher
+domicile:Seoul, South Korea
+company work:Insight Research Institute
+job desc:Scientific research and analysis
+
+username:Sophia Lewis
+email:sophia.lewis@example.com
+phone:222-222-2222
+password:sophialuv1
+position:Writer
+domicile:London, UK
+company work:WordCrafters Ltd
+job desc:Content creation and editing
+
+username:Liam Hall
+email:liam.hall@example.com
+phone:333-333-3333
+password:hall456
+position:Consultant
+domicile:Paris, France
+company work:Strategic Consulting Co
+job desc:Expert advisory services
+
+username:Mia Wilson
+email:mia.wilson@example.com
+phone:444-444-4444
+password:miapass
+position:Analyst
+domicile:Toronto, Canada
+company work:Insightful Analytics
+job desc:Data analysis and insights
+
+username:Ethan Miller
+email:ethan.miller@example.com
+phone:555-555-5555
+password:ethanpass
+position:Developer
+domicile:San Francisco, USA
+company work:Tech Innovators Inc
+job desc:Software development
+
+username:Olivia Harris
+email:olivia.harris@example.com
+phone:666-666-6666
+password:harris123
+position:Designer
+domicile:Berlin, Germany
+company work:DesignCraft Co
+job desc:Creative design and aesthetics
+
+username:Noah Adams
+email:noah.adams@example.com
+phone:777-777-7777
+password:noahpass1
+position:Manager
+domicile:Sydney, Australia
+company work:MegaCorp Ltd
+job desc:Team management and coordination
+
+username:Emma Clark
+email:emma.clark@example.com
+phone:888-888-8888
+password:emma456
+position:Sales Executive
+domicile:New York, USA
+company work:SalesPro Inc
+job desc:Sales strategy and growth
+
+username:Liam Wilson
+email:liam.wilson@example.com
+phone:999-999-9999
+password:wilsonpass
+position:Researcher
+domicile:Boston, USA
+company work:Research Innovations
+job desc:Scientific exploration
+
+username:Mia Smith
+email:mia.smith@example.com
+phone:111-111-1111
+password:miasmith123
+position:Writer
+domicile:Paris, France
+company work:WordSmith Co
+job desc:Content creation and storytelling
+
+username:Ethan Jones
+email:ethan.jones@example.com
+phone:222-222-2222
+password:ethan567
+position:Consultant
+domicile:London, UK
+company work:Expertise Solutions
+job desc:Strategic consulting and advice
+
+username:Ava Walker
+email:ava.walker@example.com
+phone:333-333-3333
+password:ava987
+position:Analyst
+domicile:Tokyo, Japan
+company work:Data Insights Corp
+job desc:Data analysis and insights
+
+username:Olivia Martin
+email:olivia.martin@example.com
+phone:444-444-4444
+password:oliviapass
+position:Developer
+domicile:San Francisco, USA
+company work:CodeCrafters Inc
+job desc:Software development
+
+username:Liam Jackson
+email:liam.jackson@example.com
+phone:555-555-5555
+password:liam123dev
+position:Designer
+domicile:Sydney, Australia
+company work:Artistic Creations
+job desc:Visual design and aesthetics
+
+username:Mia Hall
+email:mia.hall@example.com
+phone:666-666-6666
+password:miahallpass
+position:Manager
+domicile:Paris, France
+company work:Global Management Inc
+job desc:Team leadership and coordination
+
+username:Ethan Thompson
+email:ethan.thompson@example.com
+phone:777-777-7777
+password:ethanpass123
+position:Analyst
+domicile:Toronto, Canada
+company work:Data Insights Co
+job desc:Data analysis and insights
+
+username:Ava Morris
+email:ava.morris@example.com
+phone:888-888-8888
+password:avapass456
+position:Developer
+domicile:Berlin, Germany
+company work:TechCrafters Ltd
+job desc:Software development
+
+username:Liam Jenkins
+email:liam.jenkins@example.com
+phone:999-999-9999
+password:liampass789
+position:Designer
+domicile:Milan, Italy
+company work:Creative Innovations
+job desc:Visual design and creativity
+
+username:Mia Rogers
+email:mia.rogers@example.com
+phone:111-111-1111
+password:miapass123
+position:Manager
+domicile:Sydney, Australia
+company work:MegaTech Inc
+job desc:Team leadership and coordination
+
+username:Ethan Harris
+email:ethan.harris@example.com
+phone:222-222-2222
+password:ethan456pass
+position:Sales Executive
+domicile:New York, USA
+company work:SalesGenius Corp
+job desc:Sales and business growth
+
+username:Ava Adams
+email:ava.adams@example.com
+phone:333-333-3333
+password:ava987pass
+position:Researcher
+domicile:London, UK
+company work:Insight Research Institute
+job desc:Scientific exploration
+
+username:Liam Clark
+email:liam.clark@example.com
+phone:444-444-4444
+password:liamclarkpass
+position:Writer
+domicile:Sydney, Australia
+company work:WordSmith Co
+job desc:Content creation and storytelling
+
+username:Mia Wilson2
+email:mia.wilson2@example.com
+phone:555-555-5555
+password:miawilsonpass
+position:Consultant
+domicile:Paris, France
+company work:Expertise Solutions
+job desc:Strategic consulting and advice
+
+username:Ethan Turner
+email:ethan.turner@example.com
+phone:666-666-6666
+password:ethanturner123
+position:Analyst
+domicile:Tokyo, Japan
+company work:Data Insights Corp
+job desc:Data analysis and insights
+
+username:Ava Martin
+email:ava.martin@example.com
+phone:777-777-7777
+password:avapass789
+position:Developer
+domicile:San Francisco, USA
+company work:CodeCrafters Inc
+job desc:Software development
