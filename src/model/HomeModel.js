@@ -98,8 +98,35 @@ workers_skills.id, workers_skills.id_worker, workers_skills.skills_name`,
   });
 };
 
+const getHire = async (id) => {
+  return new Promise((resolve, reject) => {
+    Pool.query(
+      `SELECT
+        workers_authprofile.id AS authprofile_id,
+
+        workers_authprofile.username, workers_authprofile.email, workers_authprofile.phone, workers_authprofile.is_active, workers_authprofile.checker, workers_authprofile.position, workers_authprofile.domicile, workers_authprofile.company_work, workers_authprofile.job_desc, workers_authprofile.photo_worker,
+
+        workers_skills.id AS skills_id,
+        workers_skills.id_worker AS skills_id_worker,
+        workers_skills.skills_name
+        
+        FROM workers_authprofile
+        JOIN workers_skills ON workers_authprofile.id = workers_skills.id_worker
+        WHERE workers_authprofile.id=${id}`,
+      (err, result) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      }
+    );
+  });
+};
+
 module.exports = {
   getHomeSearchSortPagination,
   getDetailHiring,
-  getHomeCount
+  getHomeCount,
+  getHire
 };

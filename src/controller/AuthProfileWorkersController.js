@@ -239,15 +239,7 @@ const AuthProfileController = {
       return res.status(404).json({ message: "wrong input id" });
     }
 
-    let id_payload = req.payload.id;
     let dataWorkersId = await getAuthProfileWorkersById(parseInt(id));
-
-    console.log("id data");
-    console.log(id_payload);
-    console.log(dataWorkersId);
-    if (id_payload != dataWorkersId.rows[0].id) {
-      return res.status(404).json({ message: "not your profile" });
-    }
 
     console.log("dataWorkersId");
     console.log(dataWorkersId);

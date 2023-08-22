@@ -13,7 +13,7 @@ router.put('/recruiter/changepassword', Protect)
 router.get('/verify/:id',verify)
 router.put('/recruiter/update/:id',Protect,upload.single('photo'),putRecruiter)
 router.get('/detail',getDataCompany)
-router.get("/recruiter/:id", Protect, getRecruiterById)
+router.get("/recruiter/:id", getRecruiterById)
 
 router.post('/workers/login',loginWorker)
 router.post('/workers/register',registerWorker)
@@ -21,7 +21,7 @@ router.put('/workers/changepassword', Protect, changeDataWorker)
 router.get('/verifyworker/:id',verifyWorker)
 
 router.put("/workers/update/:id", Protect, upload.single("photo_worker"), putWorkers)
-router.get("/workers/:id", Protect, getWorkersById)
+router.get("/workers/:id", getWorkersById)
 
 
 

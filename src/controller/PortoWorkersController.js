@@ -83,7 +83,7 @@ const portoWorkersController = {
 
     console.log("id data");
     console.log(id_worker);
-    console.log(dataWorkersId.rows[0]);
+    console.log(dataWorkersId);
     if (id_worker != dataWorkersId.rows[0].id_worker) {
       return res.status(404).json({ message: "not your workers" });
     }
