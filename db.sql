@@ -238,7 +238,10 @@ FROM workers_authprofile
     JOIN workers_experience ON workers_authprofile.id = workers_experience.id_workers
     JOIN workers_portofolio ON workers_authprofile.id = workers_portofolio.id_worker;
 
-`
+
+SELECT workers_portofolio.id, workers_portofolio.id_worker, workers_portofolio.porto_name, workers_portofolio.porto_link, workers_portofolio.porto_type, workers_portofolio.porto_photo FROM workers_portofolio JOIN workers_authprofile ON workers_portofolio.id_worker = workers_authprofile.id WHERE workers_portofolio.id_worker=24;
+
+
 SELECT
     workers_authprofile.id AS authprofile_id,
     workers_experience.id AS experience_id,

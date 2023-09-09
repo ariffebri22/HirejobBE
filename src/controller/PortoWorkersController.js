@@ -1,213 +1,241 @@
-const {
-  postPortoWorkers,
-  getPortoWorkersById,
-  deletePortoWorkersById,
-  putPortoWorkers,
-} = require("../model/PortoWorkersModel");
+const { postPortoWorkers, getPortoWorkersById, deletePortoWorkersById, putPortoWorkers, getPortoUsersById } = require("../model/PortoWorkersModel");
 
 const cloudinary = require("../config/photo");
 
 const portoWorkersController = {
-  postWorkers: async (req, res, next) => {
-    const { porto_name, porto_link, porto_type } = req.body;
-    const { porto_photo } = req.file;
-    
-    console.log("post file");
-    console.log(req.file);
-    console.log(req.body);
-    console.log("post data");
-    console.log(porto_name, porto_link, porto_type, porto_photo);
+    postWorkers: async (req, res, next) => {
+        const { porto_name, porto_link, porto_type } = req.body;
+        const { porto_photo } = req.file;
 
-    if (!req.isFileValid) {
-      return res.status(404).json({ message: req.isFileValidMessage });
-    }
-    const ImageCloud = await cloudinary.uploader.upload(req.file.path, {
-      folder: "HireJob Project",
-    });
+        console.log("post file");
+        console.log(req.file);
+        console.log(req.body);
+        console.log("post data");
+        console.log(porto_name, porto_link, porto_type, porto_photo);
 
-    if (!ImageCloud) {
-      return res.status(404).json({ message: "upload photo fail" });
-    }
-    console.log(ImageCloud);
+        if (!req.isFileValid) {
+            return res.status(404).json({ message: req.isFileValidMessage });
+        }
+        const ImageCloud = await cloudinary.uploader.upload(req.file.path, {
+            folder: "HireJob Project",
+        });
 
-    let id_worker = req.payload.id;
-    console.log("payload");
-    console.log(req.payload);
-    console.log(id_worker, porto_name, porto_link, porto_type, porto_photo);
+        if (!ImageCloud) {
+            return res.status(404).json({ message: "upload photo fail" });
+        }
+        console.log(ImageCloud);
 
-    if (
-      !id_worker ||
-      !porto_name ||
-      !porto_link ||
-      !porto_type
-      // !porto_photo
-    ) {
-      return res.status(404).json({
-        message: "input correctly",
-      });
-    }
+        let id_worker = req.payload.id;
+        console.log("payload");
+        console.log(req.payload);
+        console.log(id_worker, porto_name, porto_link, porto_type, porto_photo);
 
-    let data = {
-      id_worker,
-      porto_name,
-      porto_link,
-      porto_type,
-      porto_photo: ImageCloud.secure_url,
-    };
+        if (
+            !id_worker ||
+            !porto_name ||
+            !porto_link ||
+            !porto_type
+            // !porto_photo
+        ) {
+            return res.status(404).json({
+                message: "input correctly",
+            });
+        }
 
-    console.log("data");
-    console.log(data);
+        let data = {
+            id_worker,
+            porto_name,
+            porto_link,
+            porto_type,
+            porto_photo: ImageCloud.secure_url,
+        };
 
-    let result = await postPortoWorkers(data);
-    console.log(result);
+        console.log("data");
+        console.log(data);
 
-    return res
-      .status(200)
-      .json({ status: 200, message: "data workers success", data });
-  },
-  putWorkers: async (req, res, next) => {
-    const { id } = req.params;
-    const { porto_name, porto_link, porto_type } = req.body;
-    const { porto_photo } = req.file;
-    console.log("req.body");
-    console.log(req.body);
-    console.log(porto_name, porto_link, porto_type, porto_photo);
+        let result = await postPortoWorkers(data);
+        console.log(result);
 
-    if (!id || id <= 0 || isNaN(id)) {
-      return res.status(404).json({ message: "wrong input id" });
-    }
+        return res.status(200).json({ status: 200, message: "data workers success", data });
+    },
+    putWorkers: async (req, res, next) => {
+        const { id } = req.params;
+        const { porto_name, porto_link, porto_type } = req.body;
+        const { porto_photo } = req.file;
+        console.log("req.body");
+        console.log(req.body);
+        console.log(porto_name, porto_link, porto_type, porto_photo);
 
-    let dataWorkersId = await getPortoWorkersById(parseInt(id));
+        if (!id || id <= 0 || isNaN(id)) {
+            return res.status(404).json({ message: "wrong input id" });
+        }
 
-    let id_worker = req.payload.id;
+        let dataWorkersId = await getPortoWorkersById(parseInt(id));
 
-    console.log("id data");
-    console.log(id_worker);
-    console.log(dataWorkersId);
-    if (id_worker != dataWorkersId.rows[0].id_worker) {
-      return res.status(404).json({ message: "not your workers" });
-    }
+        let id_worker = req.payload.id;
 
-    console.log("dataWorkersId");
-    console.log(dataWorkersId);
-    if (!dataWorkersId.rows[0]) {
-      return res.status(200).json({
-        status: 200,
-        message: "get data workers data not found",
-        data: [],
-      });
-    }
-    console.log("req.isFileValid");
+        console.log("id data");
+        console.log(id_worker);
+        console.log(dataWorkersId);
+        if (id_worker != dataWorkersId.rows[0].id_worker) {
+            return res.status(404).json({ message: "not your workers" });
+        }
 
-    console.log(req.isFileValid);
+        console.log("dataWorkersId");
+        console.log(dataWorkersId);
+        if (!dataWorkersId.rows[0]) {
+            return res.status(200).json({
+                status: 200,
+                message: "get data workers data not found",
+                data: [],
+            });
+        }
+        console.log("req.isFileValid");
 
-    if (!req.isFileValid) {
-      return res.status(404).json({ message: req.isFileValidMessage });
-    }
+        console.log(req.isFileValid);
 
-    const ImageCloud = await cloudinary.uploader.upload(req.file.path, {
-      folder: "HireJob Project",
-    });
+        if (!req.isFileValid) {
+            return res.status(404).json({ message: req.isFileValidMessage });
+        }
 
-    if (!ImageCloud) {
-      return res.status(404).json({ message: "upload photo fail" });
-    }
-    console.log(ImageCloud);
-    console.log("put data");
-    console.log(dataWorkersId.rows[0]);
-    let data = {
-      porto_name: porto_name || dataWorkersId.rows[0].porto_name,
-      porto_link: porto_link || dataWorkersId.rows[0].porto_link,
-      porto_type: porto_type || dataWorkersId.rows[0].porto_type,
-      porto_photo: ImageCloud.secure_url || dataWorkersId.rows[0].porto_photo,
-    };
+        const ImageCloud = await cloudinary.uploader.upload(req.file.path, {
+            folder: "HireJob Project",
+        });
 
-    console.log(data);
+        if (!ImageCloud) {
+            return res.status(404).json({ message: "upload photo fail" });
+        }
+        console.log(ImageCloud);
+        console.log("put data");
+        console.log(dataWorkersId.rows[0]);
+        let data = {
+            porto_name: porto_name || dataWorkersId.rows[0].porto_name,
+            porto_link: porto_link || dataWorkersId.rows[0].porto_link,
+            porto_type: porto_type || dataWorkersId.rows[0].porto_type,
+            porto_photo: ImageCloud.secure_url || dataWorkersId.rows[0].porto_photo,
+        };
 
-    let result = await putPortoWorkers(parseInt(id), data);
-    let after = await getPortoWorkersById(parseInt(id));
-    console.log(result);
-    return res.status(200).json({
-      status: 200,
-      message: "update data workers success",
-      data,
-      after: after.rows[0],
-    });
-  },
+        console.log(data);
 
-  deleteWorkersById: async (req, res, next) => {
-    const { id } = req.params;
-    if (isNaN(id) || id < 0 || !id) {
-      return res.status(404).json({ message: "wrong input id" });
-    }
-    let dataWorkersId = await getPortoWorkersById(parseInt(id));
+        let result = await putPortoWorkers(parseInt(id), data);
+        let after = await getPortoWorkersById(parseInt(id));
+        console.log(result);
+        return res.status(200).json({
+            status: 200,
+            message: "update data workers success",
+            data,
+            after: after.rows[0],
+        });
+    },
 
-    let id_worker = req.payload.id;
+    deleteWorkersById: async (req, res, next) => {
+        const { id } = req.params;
+        if (isNaN(id) || id < 0 || !id) {
+            return res.status(404).json({ message: "wrong input id" });
+        }
+        let dataWorkersId = await getPortoWorkersById(parseInt(id));
 
-    if (!dataWorkersId.rows[0]) {
-      return res.status(200).json({
-        status: 200,
-        message: "get data workers data not found",
-        data: [],
-      });
-    }
+        let id_worker = req.payload.id;
 
-    console.log("id data");
-    console.log(id_worker);
-    console.log(dataWorkersId.rows[0]);
-    if (id_worker != dataWorkersId.rows[0].id_worker) {
-      return res.status(404).json({ message: "not your workers" });
-    }
+        if (!dataWorkersId.rows[0]) {
+            return res.status(200).json({
+                status: 200,
+                message: "get data workers data not found",
+                data: [],
+            });
+        }
 
-    let deleteWorkersId = await deletePortoWorkersById(parseInt(id));
-    console.log("deleteWorkersId");
-    console.log(deleteWorkersId);
-    console.log(dataWorkersId.rows);
-    if (deleteWorkersId) {
-      res.status(200).json({
-        status: 200,
-        message: "delete data workers success",
-        data: dataWorkersId.rows,
-        dataDelete: deleteWorkersId.rows,
-      });
-    }
-  },
+        console.log("id data");
+        console.log(id_worker);
+        console.log(dataWorkersId.rows[0]);
+        if (id_worker != dataWorkersId.rows[0].id_worker) {
+            return res.status(404).json({ message: "not your workers" });
+        }
 
-  getWorkersById: async (req, res, next) => {
-    const { id } = req.params;
-    // let numberId = parseInt(req.params.id)
-    // console.log(numberId)
-    if (isNaN(id) || id < 0 || !id) {
-      return res.status(404).json({ message: "wrong input id" });
-    }
+        let deleteWorkersId = await deletePortoWorkersById(parseInt(id));
+        console.log("deleteWorkersId");
+        console.log(deleteWorkersId);
+        console.log(dataWorkersId.rows);
+        if (deleteWorkersId) {
+            res.status(200).json({
+                status: 200,
+                message: "delete data workers success",
+                data: dataWorkersId.rows,
+                dataDelete: deleteWorkersId.rows,
+            });
+        }
+    },
 
-    let id_worker = req.payload.id;
-    let dataWorkersId = await getPortoWorkersById(parseInt(id));
+    getWorkersById: async (req, res, next) => {
+        const { id } = req.params;
+        // let numberId = parseInt(req.params.id)
+        // console.log(numberId)
+        if (isNaN(id) || id < 0 || !id) {
+            return res.status(404).json({ message: "wrong input id" });
+        }
 
-    console.log("id data");
-    console.log(id_worker);
-    console.log(dataWorkersId);
-    if (id_worker != dataWorkersId.rows[0].id_worker) {
-      return res.status(404).json({ message: "not your porto" });
-    }
+        let id_worker = req.payload.id;
+        let dataWorkersId = await getPortoWorkersById(parseInt(id));
 
-    console.log("dataWorkersId");
-    console.log(dataWorkersId);
-    if (!dataWorkersId.rows[0]) {
-      return res.status(200).json({
-        status: 200,
-        message: "get data porto data not found",
-        data: [],
-      });
-    }
-    if (dataWorkersId) {
-      res.status(200).json({
-        status: 200,
-        message: "get data porto success",
-        data: dataWorkersId.rows,
-      });
-    }
-  },
+        console.log("id data");
+        console.log(id_worker);
+        console.log(dataWorkersId);
+        if (id_worker != dataWorkersId.rows[0].id_worker) {
+            return res.status(404).json({ message: "not your porto" });
+        }
+
+        console.log("dataWorkersId");
+        console.log(dataWorkersId);
+        if (!dataWorkersId.rows[0]) {
+            return res.status(200).json({
+                status: 200,
+                message: "get data porto data not found",
+                data: [],
+            });
+        }
+        if (dataWorkersId) {
+            res.status(200).json({
+                status: 200,
+                message: "get data porto success",
+                data: dataWorkersId.rows,
+            });
+        }
+    },
+    getUsersById: async (req, res, next) => {
+        const { id } = req.params;
+        // let numberId = parseInt(req.params.id)
+        // console.log(numberId)
+        if (isNaN(id) || id < 0 || !id) {
+            return res.status(404).json({ message: "wrong input id" });
+        }
+
+        let id_worker = req.payload.id;
+        let dataWorkersId = await getPortoUsersById(parseInt(id));
+
+        console.log("id data");
+        console.log(id_worker);
+        console.log(dataWorkersId);
+        // if (id_worker != dataWorkersId.rows[0].id_worker) {
+        //     return res.status(404).json({ message: "not your porto" });
+        // }
+
+        console.log("dataWorkersId");
+        console.log(dataWorkersId);
+        if (!dataWorkersId.rows[0]) {
+            return res.status(200).json({
+                status: 200,
+                message: "get data porto data not found",
+                data: [],
+            });
+        }
+        if (dataWorkersId) {
+            res.status(200).json({
+                status: 200,
+                message: "get data porto success",
+                data: dataWorkersId.rows,
+            });
+        }
+    },
 };
 
 module.exports = portoWorkersController;

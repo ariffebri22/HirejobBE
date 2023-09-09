@@ -184,10 +184,10 @@ const ExperienceController = {
 
             console.log("id data");
             console.log(users_id);
-            console.log(dataExpId.rows[0].id);
-            if (users_id !== dataExpId.rows[0].id_workers) {
-                return res.status(403).json({ status: 403, message: "You are not authorized to access this." });
-            }
+            // console.log(dataExpId.rows[0].id);
+            // if (users_id !== dataExpId.rows[0].id_workers) {
+            //     return res.status(403).json({ status: 403, message: "You are not authorized to access this." });
+            // }
 
             console.log("put data");
             console.log(dataExpId.rows[0]);
