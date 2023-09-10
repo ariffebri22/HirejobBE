@@ -1,10 +1,10 @@
 const Pool = require("../config/db");
 
 const createUser = async (data) => {
-    let { username, email, password, phone, jabatan, perusahaan, uuid } = data;
+    let { username, email, password, phone, jabatan, perusahaan, uuid, type } = data;
     console.log("model createUser");
     return new Promise((resolve, reject) =>
-        Pool.query(`INSERT INTO company_authprofil(username,email,password,phone,jabatan,perusahaan,checker) VALUES('${username}','${email}','${password}','${phone}','${jabatan}','${perusahaan}','${uuid}')`, (err, result) => {
+        Pool.query(`INSERT INTO company_authprofil(username,email,password,phone,jabatan,perusahaan,checker,type) VALUES('${username}','${email}','${password}','${phone}','${jabatan}','${perusahaan}','${uuid}','${type}')`, (err, result) => {
             if (!err) {
                 resolve(result);
             } else {

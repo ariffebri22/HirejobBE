@@ -14,10 +14,10 @@ const getUserByEmail = async (email) => {
 };
 
 const createUser = async (data) => {
-    let { username, email, phone, password, uuid } = data;
+    let { username, email, phone, password, uuid, type } = data;
     console.log("model createUser");
     return new Promise((resolve, reject) =>
-        Pool.query(`INSERT INTO workers_authprofile (username, email, phone, password, checker) VALUES('${username}','${email}','${phone}','${password}','${uuid}')`, (err, result) => {
+        Pool.query(`INSERT INTO workers_authprofile (username, email, phone, password, checker, type) VALUES('${username}','${email}','${phone}','${password}','${uuid}','${type}')`, (err, result) => {
             if (err) {
                 reject(err);
             } else {
