@@ -13,7 +13,7 @@ CREATE TABLE
     );
 DROP TABLE pesan;
 
-ALTER TABLE pesan ADD COLUMN hire_position VARCHAR;
+ALTER TABLE company_authprofil ADD COLUMN type VARCHAR;
 
 CREATE TABLE
     profil_company(

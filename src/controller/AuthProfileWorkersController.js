@@ -40,6 +40,7 @@ const AuthProfileController = {
             phone,
             password,
             uuid,
+            type: "workers",
         };
 
         let data = await createUser(dataUser);
