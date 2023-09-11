@@ -1,0 +1,1091 @@
+{
+	"info": {
+		"_postman_id": "ee2615e2-78d8-4bb8-9872-39f5f0c937b6",
+		"name": "Hire Job",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27673375"
+	},
+	"item": [
+		{
+			"name": "AUTHPROFILE",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "arifuiux@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/workers/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"workers",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "LA",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "lkanugrahan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "888-999-0000",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/workers/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"workers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PASSWORD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhcmlmIiwiZW1haWwiOiJrYW51Z3JhaGFubGFuZ2dlbmdAZ21haWwuY29tIiwicGhvbmUiOiIxMjMxMjMiLCJpc19hY3RpdmUiOnRydWUsImNoZWNrZXIiOiJkOWJlNWE0NS1jMmE4LTQ2ZWUtOGIwMi03ZjI0ODAxMDRkNzAiLCJwb3NpdGlvbiI6bnVsbCwiZG9taWNpbGUiOm51bGwsImNvbXBhbnlfd29yayI6bnVsbCwiam9iX2Rlc2MiOm51bGwsInBob3RvX3dvcmtlciI6bnVsbCwiaWF0IjoxNjkyNTA2NjA5fQ.DobhQ_au9I9ytWis_g37GzNqIVoVm10OUX0eQOCOouU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "aqswde",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "bgs",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/workers/changepassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"workers",
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PROFILE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJhcmlmIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjpudWxsLCJkb21pY2lsZSI6bnVsbCwiY29tcGFueV93b3JrIjpudWxsLCJqb2JfZGVzYyI6bnVsbCwicGhvdG9fd29ya2VyIjpudWxsLCJpYXQiOjE2OTI2MTU0MDl9.r5SY0RmnQgIzQW9Yn2N7ywqhFn0WZJzEgTWSFphsyZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Arif Febriansyah",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "Direktur",
+									"type": "text"
+								},
+								{
+									"key": "domicile",
+									"value": "Cianjur",
+									"type": "text"
+								},
+								{
+									"key": "company_work",
+									"value": "Moonton",
+									"type": "text"
+								},
+								{
+									"key": "job_desc",
+									"value": "managing",
+									"type": "text"
+								},
+								{
+									"key": "photo_worker",
+									"type": "file",
+									"src": "/C:/Users/Asus/Downloads/Langgeng.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/workers/update/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"workers",
+								"update",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PROFILE ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhcmlmIiwiZW1haWwiOiJrYW51Z3JhaGFubGFuZ2dlbmdAZ21haWwuY29tIiwicGhvbmUiOiIxMjMxMjMiLCJpc19hY3RpdmUiOnRydWUsImNoZWNrZXIiOiJkOWJlNWE0NS1jMmE4LTQ2ZWUtOGIwMi03ZjI0ODAxMDRkNzAiLCJwb3NpdGlvbiI6bnVsbCwiZG9taWNpbGUiOm51bGwsImNvbXBhbnlfd29yayI6bnVsbCwiam9iX2Rlc2MiOm51bGwsInBob3RvX3dvcmtlciI6bnVsbCwiaWF0IjoxNjkyNTA2NjA5fQ.DobhQ_au9I9ytWis_g37GzNqIVoVm10OUX0eQOCOouU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/auth/recruiter/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recruiter",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN REC",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "atiowahyudi02@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "example@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/recruiter/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recruiter",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER REC",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "lkanugrahan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "arif",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "123123",
+									"type": "text"
+								},
+								{
+									"key": "perusahaan",
+									"value": "surya",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jabatan",
+									"value": "staff",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/recruiter/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recruiter",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PASSWORD REC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjMsInVzZXJuYW1lIjoiZXhhbXBsZSIsImVtYWlsIjoicmFuZ2dhYXJkb2tpdEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzE0IiwicGVydXNhaGFhbiI6InVuZGVmaW5lZCIsImphYmF0YW4iOiJ1bmRlZmluZWQiLCJjcmVhdGVkX2F0IjoiMjAyMy0wOC0xOFQxODo1MzoyOS4wNDBaIiwiaXNfYWN0aXZlIjp0cnVlLCJjaGVja2VyIjoiZGVkY2I2YjItZDAxZi00M2Q1LTllYzQtMDU0NWEyNWIzZTIwIiwiaWF0IjoxNjkyMzg0MTEwfQ.ho3YCLzFg94_pLj0tsr05LRViy2VJc-to3Ye5TYkk0k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "qawsed",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "langgeng",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kanugrahanlanggeng@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/auth/recruiter/changepassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"recruiter",
+								"changepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PROFILE REC",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwidXNlcm5hbWUiOiJBdGlvIiwiZW1haWwiOiJhdGlvd2FoeXVkaTAyQGdtYWlsLmNvbSIsInBob25lIjoiMDg1Nzc0NDcxMTU3IiwicGVydXNhaGFhbiI6IlBULiBBVElPIiwiamFiYXRhbiI6ImJvcyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6IjQxNTI5M2E4LTBmODQtNDliNC05OWI0LWQxOTcyYjhjYTJkZCIsImJpZGFuZyI6bnVsbCwicHJvdmluc2kiOm51bGwsImtvdGEiOm51bGwsImRlc2tyaXBzaSI6bnVsbCwiZW1haWxfcGVydXNhaGFhbiI6bnVsbCwicGhvbmVfY29tcGFueSI6bnVsbCwibGlua2VkaW4iOm51bGwsInBob3RvIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMy0wOC0yMlQxMTo1NToxNC4zODVaIiwiaWF0IjoxNjkyNzEzMDA5fQ.1Lz7GPfHvRvYuv1_gjqQ2TY1w7Hzrm9mfqyB9MH9Sno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "perusahaan",
+									"value": "PT ABADI",
+									"type": "text"
+								},
+								{
+									"key": "bidang",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "provinsi",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "kota",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deskripsi",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email_perusahaan",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone_company",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "linkedin,",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Asus/Downloads/Porto/Alex Martin 2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://better-crab-threads.cyclic.cloud/auth/recruiter/update/8",
+							"protocol": "https",
+							"host": [
+								"better-crab-threads",
+								"cyclic",
+								"cloud"
+							],
+							"path": [
+								"auth",
+								"recruiter",
+								"update",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SKILL",
+			"item": [
+				{
+					"name": "POST SKILL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsInVzZXJuYW1lIjoiU29waGlhIFRob21wc29uIiwiZW1haWwiOiJzb3BoaWEudGhvbXBzb25AZXhhbXBsZS5jb20iLCJwaG9uZSI6Ijg4OC05OTktMDAwMCIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6IjkxNDMzOWFiLTFiZWEtNDJhMC1hN2E0LTNkOGMyZTAwMWUwZCIsInBvc2l0aW9uIjoiQW5hbHlzdCIsImRvbWljaWxlIjoiVG9yb250bywgQ2FuYWRhIiwiY29tcGFueV93b3JrIjoibnVsbCIsImpvYl9kZXNjIjoibnVsbCIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI2NDM2NjQvSGlyZUpvYiUyMFByb2plY3Qvd2pqZnRxcmZjandxZnZkOWlubXEuanBnIiwiaWF0IjoxNjkyNjQ0OTcxfQ.dV2UC1hkXrAQBH1CiaDPtVp8vYdA2njYRPI0ziwFUFI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "skills_name",
+									"value": "analyst, calculate",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://zany-rose-hummingbird-fez.cyclic.cloud/skill/workers/",
+							"protocol": "https",
+							"host": [
+								"zany-rose-hummingbird-fez",
+								"cyclic",
+								"cloud"
+							],
+							"path": [
+								"skill",
+								"workers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT SKILL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiZ3MiLCJlbWFpbCI6ImthbnVncmFoYW5sYW5nZ2VuZ0BnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImQ5YmU1YTQ1LWMyYTgtNDZlZS04YjAyLTdmMjQ4MDEwNGQ3MCIsInBvc2l0aW9uIjpudWxsLCJkb21pY2lsZSI6bnVsbCwiY29tcGFueV93b3JrIjpudWxsLCJqb2JfZGVzYyI6bnVsbCwicGhvdG9fd29ya2VyIjpudWxsLCJpYXQiOjE2OTI1MDY2NDR9.oSmypTTyS85K3S4tGaH1YYLwoIuQ_X2EOGLIx52XTZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "skills_name",
+									"value": "blabalbal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/skill/workers/update/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill",
+								"workers",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SKILL ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJiZ3MiLCJlbWFpbCI6ImthbnVncmFoYW5sYW5nZ2VuZ0BnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImQ5YmU1YTQ1LWMyYTgtNDZlZS04YjAyLTdmMjQ4MDEwNGQ3MCIsInBvc2l0aW9uIjpudWxsLCJkb21pY2lsZSI6bnVsbCwiY29tcGFueV93b3JrIjpudWxsLCJqb2JfZGVzYyI6bnVsbCwicGhvdG9fd29ya2VyIjpudWxsLCJpYXQiOjE2OTI1MDY2NDR9.oSmypTTyS85K3S4tGaH1YYLwoIuQ_X2EOGLIx52XTZI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/skill/workers/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"skill",
+								"workers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PORTOFOLIO",
+			"item": [
+				{
+					"name": "POST PORTO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "porto_name",
+									"value": "StatTrend",
+									"type": "text"
+								},
+								{
+									"key": "porto_link",
+									"value": "https://github.com/sophiathompson/stat-trend",
+									"type": "text"
+								},
+								{
+									"key": "porto_type",
+									"value": "app",
+									"type": "text"
+								},
+								{
+									"key": "porto_photo",
+									"type": "file",
+									"src": "/C:/Users/Asus/Downloads/Porto/Sophia Thompson 2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/porto/workers/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"porto",
+								"workers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PORTO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "porto_name",
+									"value": "aplikasi apa aja ",
+									"type": "text"
+								},
+								{
+									"key": "porto_link",
+									"value": "ini link",
+									"type": "text"
+								},
+								{
+									"key": "porto_type",
+									"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "porto_photo",
+									"type": "file",
+									"src": "/C:/Users/Asus/Downloads/nasi goreng.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/porto/workers/update/33",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"porto",
+								"workers",
+								"update",
+								"33"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PORTO ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/porto/workers/33",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"porto",
+								"workers",
+								"33"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PORTO",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/porto/workers/delete/32",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"porto",
+								"workers",
+								"delete",
+								"32"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HOME",
+			"item": [
+				{
+					"name": "GET HOME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/home?page=1&sort=ASC&limit=3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"home"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								},
+								{
+									"key": "search",
+									"value": "a",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET HOME ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/home/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"home",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET HOME ID Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/home/hire/20",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"home",
+								"hire",
+								"20"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXP",
+			"item": [
+				{
+					"name": "GET EXP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/exp/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"exp",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST EXP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "posisi",
+									"value": "Direktur",
+									"type": "text"
+								},
+								{
+									"key": "nama_perusahaan",
+									"value": "PT GOTO",
+									"type": "text"
+								},
+								{
+									"key": "working_start_at",
+									"value": "12/02/2019",
+									"type": "text"
+								},
+								{
+									"key": "working_end_at",
+									"value": "06/10/2020",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "GOTO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/exp/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"exp",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT EXP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "posisi",
+									"value": "Direktur",
+									"type": "text"
+								},
+								{
+									"key": "nama_perusahaan",
+									"value": "PT GOTO",
+									"type": "text"
+								},
+								{
+									"key": "working_start_at",
+									"value": "12/02/2019",
+									"type": "text"
+								},
+								{
+									"key": "working_end_at",
+									"value": "06/10/2020",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "GOTO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/exp/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"exp",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE EXP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJMb3B5dUppaHlvIiwiZW1haWwiOiJhcmlmdWl1eEBnbWFpbC5jb20iLCJwaG9uZSI6IjEyMzEyMyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6ImVlYjQ3OGVhLTgzYmUtNDg0Ny1hOGI3LWQ4ZTI3NzVhYmI3NCIsInBvc2l0aW9uIjoiUE0iLCJkb21pY2lsZSI6IkNpa2ppbmciLCJjb21wYW55X3dvcmsiOiJQVC5EdWFmYSIsImpvYl9kZXNjIjoiTWFsdSIsInBob3RvX3dvcmtlciI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL2RjcGkzbTJ1cC9pbWFnZS91cGxvYWQvdjE2OTI3MTcwMjEvSGlyZUpvYiUyMFByb2plY3QvdW9hYWtsaWFqc2pxbHRmN292Z2MuanBnIiwiaWF0IjoxNjkyNzIwNTcwfQ.AmF927hmYC3ptybZa917U6u4XXsExS4sdP-U1GSn2gI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/exp/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"exp",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PESAN",
+			"item": [
+				{
+					"name": "POST PESAN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwidXNlcm5hbWUiOiJBdGlvIiwiZW1haWwiOiJhdGlvd2FoeXVkaTAyQGdtYWlsLmNvbSIsInBob25lIjoiMDg1Nzc0NDcxMTU3IiwicGVydXNhaGFhbiI6IlBULiBBVElPIiwiamFiYXRhbiI6ImJvcyIsImlzX2FjdGl2ZSI6dHJ1ZSwiY2hlY2tlciI6IjQxNTI5M2E4LTBmODQtNDliNC05OWI0LWQxOTcyYjhjYTJkZCIsImJpZGFuZyI6bnVsbCwicHJvdmluc2kiOm51bGwsImtvdGEiOm51bGwsImRlc2tyaXBzaSI6bnVsbCwiZW1haWxfcGVydXNhaGFhbiI6bnVsbCwicGhvbmVfY29tcGFueSI6bnVsbCwibGlua2VkaW4iOm51bGwsInBob3RvIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMy0wOC0yMlQxMTo1NToxNC4zODVaIiwiaWF0IjoxNjkyNzEzMDA5fQ.1Lz7GPfHvRvYuv1_gjqQ2TY1w7Hzrm9mfqyB9MH9Sno",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "company_message",
+									"value": "kamu diterima",
+									"type": "text"
+								},
+								{
+									"key": "workers_message",
+									"value": "iya",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hire_position",
+									"value": "web dev",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://zany-rose-hummingbird-fez.cyclic.cloud/chat/23",
+							"protocol": "https",
+							"host": [
+								"zany-rose-hummingbird-fez",
+								"cyclic",
+								"cloud"
+							],
+							"path": [
+								"chat",
+								"23"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
